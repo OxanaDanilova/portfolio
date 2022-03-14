@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass src/scss:src/styles",
+    "build": "mkdir dist && sass src/scss:src/styles && cp -r src/* dist/",
+    "publish": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OxanaDanilova/portfolio.git"
   },
-  "author": "",
+  "author": "Oxana Danilova",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/OxanaDanilova/portfolio/issues"
