@@ -1,51 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
+
 $bg-color: royalblue;
 $color: white;
 
+@mixin image-center {
+  object-position: center;
+  object-fit: cover;
+}
+
+@mixin my-flex($direction, $justify){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: center;
+}
+
 body {
-    background-color: $bg-color;
+  margin: 0;
+  padding: 0;
+  font-family: "Sansita Swashed", cursive;
+  background: linear-gradient(to bottom, $bg-color, $color);
 }
 
-header {
-    height: 5rem;
-    position: fixed;
-    top: 0;
-    width: 100%;    
-    ul {
-        padding: 1rem;
-        list-style-type: none;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 300px;
-        margin: 0 auto;
-        a {
-            text-decoration: none;
-            color: $color;
-        }
+.header-wrapper {
+  height: 100vh;
+  width: 100%;
+  margin-bottom: 30vh;
+  nav {
+    position: fixed;    
+    width: 100%;
+    opacity: 0;
+    animation: header 2s 4s forwards;
+  }
+  ul {
+    padding: 2rem;
+    list-style-type: none;
+    @include my-flex(row, space-around);
+    width: 50%;
+    margin: 0 auto;
+    li {
+      font-size: 2rem;
+      &:hover {
+        transform: scale(1.2);
+        border-bottom: 1px solid rgba(123, 91, 240, 0.822);
+      }
     }
+    a {
+      text-decoration: none;
+      color: $color;
+    }
+  }
 }
 
-main {
-    margin-top: 6rem;
-    background-color: orange;
+.about-me {
+    width: 50%;
+    margin: 10rem auto 0 auto;
+    @include my-flex(row, space-around);
 }
 
-.foto {
-    margin-top: 1rem;
-    width: 300px;
+
+@keyframes appearance {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+}
+
+  @keyframes flip {
+    0% {
+      -webkit-transform: rotate3d(-1, 1, 0, 0deg);
+              transform: rotate3d(-1, 1, 0, 0deg);
+              
+    }
+    100% {
+      -webkit-transform: rotate3d(-1, 1, 0, 180deg);
+              transform: rotate3d(-1, 1, 0, 180deg);
+    }
+  }
+
+  @keyframes header{
+      from {
+          top:100%;
+          opacity: 0;
+      }
+      to {
+          top:0;
+          opacity: 1;
+      }
+      
+  }
+  
+
+  
+
+
+.photo {
+  width: 300px;
+  height: 400px;
+  @include image-center;
+  opacity: 0;
+  animation: appearance 2s 2s forwards;
+  
+}
+
+.about-text {
     height: 300px;
-    background-color: hotpink;
-    margin: 0 auto;
+    @include my-flex(column, space-around);
+    p {
+        margin-top: 1rem;
+        padding: 1rem;
+        width: 300px;        
+        color: $bg-color;
+        background-color: $color;
+        margin: 0 auto;
+        border-radius: 1rem;
+        opacity: 0;
+      }
+      p:nth-child(1) {
+        animation: appearance 500ms forwards;
+
+      }
+
+      p:nth-child(2) {
+        animation: appearance 500ms 1s forwards;
+      }
+      p:nth-child(3) {
+        animation: appearance 500ms 1.5s forwards;
+      }
 }
 
-p {
-    margin-top: 1rem;
-    padding: 1rem;
-    width: 300px;
-    color: $bg-color;
-    background-color: $color;
-    margin: 0 auto;
-    border-radius: 1rem;
-}
+
 
 
