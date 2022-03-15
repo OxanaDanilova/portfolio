@@ -9,13 +9,16 @@ body {
 .header-wrapper {
   height: 100vh;
   width: 100%;
-  margin-bottom: 30vh;
+  position: relative;
+  z-index: 5;
 }
 .header-wrapper nav {
   position: fixed;
   width: 100%;
   opacity: 0;
   animation: header 2s 4s forwards;
+  background-color: royalblue;
+  z-index: 10;
 }
 .header-wrapper ul {
   padding: 2rem;
@@ -39,9 +42,10 @@ body {
   color: white;
 }
 
-.about-me {
+#about-me {
   width: 50%;
-  margin: 10rem auto 0 auto;
+  margin: 0 auto;
+  padding-top: 10rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -98,6 +102,7 @@ body {
   margin-top: 1rem;
   padding: 1rem;
   width: 300px;
+  text-align: center;
   color: royalblue;
   background-color: white;
   margin: 0 auto;
@@ -112,6 +117,133 @@ body {
 }
 .about-text p:nth-child(3) {
   animation: appearance 500ms 1.5s forwards;
+}
+
+#skills {
+  padding: 10rem 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: royalblue;
+}
+#skills h3 {
+  font-size: 2.5rem;
+}
+#skills ul {
+  width: 90%;
+  list-style-type: none;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#skills ul li {
+  width: 300px;
+  height: 400px;
+  border: 2px solid royalblue;
+  border-radius: 7px;
+}
+#skills ul li figure {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+#skills ul li:nth-child(1) > figure {
+  background: url(../images/html5.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#skills ul li:nth-child(2) > figure {
+  background: url(../images/css.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-position-y: -65px;
+}
+#skills ul li:nth-child(3) > figure {
+  background: url(../images/sass.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#skills ul li:nth-child(4) > figure {
+  background: url(../images/js.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#skills ul li figcaption {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+#projects {
+  padding: 10rem 0;
+  background: royalblue;
+  /* linear-gradient(to bottom, $color, $bg-color); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+#projects h3 {
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 1px royalblue;
+}
+#projects ul {
+  width: 90%;
+  list-style-type: none;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#projects ul li {
+  width: 300px;
+  height: 400px;
+  border: 2px solid white;
+  border-radius: 7px;
+}
+#projects ul li figure {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  background-color: white;
+}
+#projects ul li:nth-child(1) > figure {
+  background: url(../images/html5.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#projects ul li:nth-child(2) > figure {
+  background: url(../images/css.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#projects ul li:nth-child(3) > figure {
+  background: url(../images/sass.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#projects ul li:nth-child(4) > figure {
+  background: url(../images/js.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#projects ul li figcaption {
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

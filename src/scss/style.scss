@@ -8,11 +8,17 @@ $color: white;
   object-fit: cover;
 }
 
-@mixin my-flex($direction, $justify){
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: center;
+@mixin bgimage-center($size: cover) {
+  background-position: center;
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+
+@mixin my-flex($direction, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: center;
 }
 
 body {
@@ -25,12 +31,15 @@ body {
 .header-wrapper {
   height: 100vh;
   width: 100%;
-  margin-bottom: 30vh;
+  position: relative; 
+  z-index: 5;
   nav {
-    position: fixed;    
+    position: fixed;
     width: 100%;
     opacity: 0;
     animation: header 2s 4s forwards;
+    background-color: $bg-color;
+    z-index: 10;
   }
   ul {
     padding: 2rem;
@@ -52,52 +61,45 @@ body {
   }
 }
 
-.about-me {
-    width: 50%;
-    margin: 10rem auto 0 auto;
-    @include my-flex(row, space-around);
+#about-me {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 10rem;
+  @include my-flex(row, space-around);
 }
-
 
 @keyframes appearance {
-    from {
-        transform: scale(0);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-    
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-  @keyframes flip {
-    0% {
-      -webkit-transform: rotate3d(-1, 1, 0, 0deg);
-              transform: rotate3d(-1, 1, 0, 0deg);
-              
-    }
-    100% {
-      -webkit-transform: rotate3d(-1, 1, 0, 180deg);
-              transform: rotate3d(-1, 1, 0, 180deg);
-    }
+@keyframes flip {
+  0% {
+    -webkit-transform: rotate3d(-1, 1, 0, 0deg);
+    transform: rotate3d(-1, 1, 0, 0deg);
   }
-
-  @keyframes header{
-      from {
-          top:100%;
-          opacity: 0;
-      }
-      to {
-          top:0;
-          opacity: 1;
-      }
-      
+  100% {
+    -webkit-transform: rotate3d(-1, 1, 0, 180deg);
+    transform: rotate3d(-1, 1, 0, 180deg);
   }
-  
+}
 
-  
-
+@keyframes header {
+  from {
+    top: 100%;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
 
 .photo {
   width: 300px;
@@ -105,35 +107,130 @@ body {
   @include image-center;
   opacity: 0;
   animation: appearance 2s 2s forwards;
-  
 }
 
 .about-text {
-    height: 300px;
-    @include my-flex(column, space-around);
-    p {
-        margin-top: 1rem;
-        padding: 1rem;
-        width: 300px;        
-        color: $bg-color;
-        background-color: $color;
-        margin: 0 auto;
-        border-radius: 1rem;
-        opacity: 0;
-      }
-      p:nth-child(1) {
-        animation: appearance 500ms forwards;
+  height: 300px;
+  @include my-flex(column, space-around);
+  p {
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+    color: $bg-color;
+    background-color: $color;
+    margin: 0 auto;
+    border-radius: 1rem;
+    opacity: 0;
+  }
+  p:nth-child(1) {
+    animation: appearance 500ms forwards;
+  }
 
-      }
-
-      p:nth-child(2) {
-        animation: appearance 500ms 1s forwards;
-      }
-      p:nth-child(3) {
-        animation: appearance 500ms 1.5s forwards;
-      }
+  p:nth-child(2) {
+    animation: appearance 500ms 1s forwards;
+  }
+  p:nth-child(3) {
+    animation: appearance 500ms 1.5s forwards;
+  }
 }
 
+#skills {
+  padding: 10rem 0;
+  background-color: $color;
+  @include my-flex(column, space-around);
+  color: $bg-color;
+  h3 {
+    font-size: 2.5rem;
+  }
+  ul {
+    width: 90%;
+    list-style-type: none;
+    padding: 1rem;
+    @include my-flex(row, space-around);
+    li {
+      width: 300px;
+      height: 400px;
+      border: 2px solid $bg-color;
+      border-radius: 7px;
+      figure {
+        width: 80%;
+        height: 80%;
+        margin: 0 auto; 
+      }
+      &:nth-child(1)>figure {
+        background: url(../images/html5.jpg);
+        @include bgimage-center(contain);
+      }
+      &:nth-child(2)>figure  {
+        background: url(../images/css.jpg);
+        @include bgimage-center(contain);
+        background-size: 150%;
+        background-position-y: -65px;
+      }
+      &:nth-child(3)>figure  {
+        background: url(../images/sass.jpg);
+        @include bgimage-center(contain);
+      }
+      &:nth-child(4)>figure  {
+        background: url(../images/js.png);
+        @include bgimage-center(contain);
+      }
+      figcaption {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+    
+  }
+}
 
-
-
+#projects {
+  padding: 10rem 0;
+  background: $bg-color;/* linear-gradient(to bottom, $color, $bg-color); */
+  @include my-flex(column, space-around);
+  color: $color;
+  h3 {
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 1px $bg-color;
+  }
+  ul {
+    width: 90%;
+    list-style-type: none;
+    padding: 1rem;
+    @include my-flex(row, space-around);
+    li {
+      width: 300px;
+      height: 400px;
+      border: 2px solid $color;
+      border-radius: 7px;     
+      figure {
+        width: 80%;
+        height: 80%;
+        margin: 0 auto; 
+        background-color: $color;      }
+      &:nth-child(1)>figure {
+        background: url(../images/html5.jpg);
+        @include bgimage-center(contain);
+      }
+      &:nth-child(2)>figure  {
+        background: url(../images/css.png);
+        @include bgimage-center(contain);
+        
+      }
+      &:nth-child(3)>figure  {
+        background: url(../images/sass.jpg);
+        @include bgimage-center(contain);
+      }
+      &:nth-child(4)>figure  {
+        background: url(../images/js.png);
+        @include bgimage-center(contain);
+      }
+      figcaption {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+    
+  }
+}
