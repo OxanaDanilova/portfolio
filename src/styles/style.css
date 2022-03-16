@@ -320,6 +320,29 @@ body {
   font-size: 1.5rem;
 }
 
+#carouselExampleCaptions {
+  margin-top: 1rem;
+  width: 65%;
+  height: 65vh;
+}
+#carouselExampleCaptions .carousel-inner,
+#carouselExampleCaptions .carousel-item {
+  height: 100%;
+}
+#carouselExampleCaptions .carousel-inner img,
+#carouselExampleCaptions .carousel-item img {
+  object-fit: cover;
+  object-position: top;
+  height: 100%;
+}
+#carouselExampleCaptions .carousel-caption {
+  background-color: rgba(125, 152, 233, 0.727);
+}
+#carouselExampleCaptions .carousel-control-prev-icon,
+#carouselExampleCaptions .carousel-control-next-icon {
+  background-color: rgba(125, 152, 233, 0.727);
+}
+
 #projects {
   padding: 10rem 0;
   background: royalblue;
