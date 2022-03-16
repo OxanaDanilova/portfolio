@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
-  <body>
-    <div class="header-wrapper">
-      <header>
-        <nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+  <div class="header-wrapper">
+    <header>
+      <nav>
+        <div id="menu-wrapper">
+          <input type="checkbox" />
+          <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <ul>
             <li><a href="#about-me">About me</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -25,153 +30,159 @@
             <li><a href="#cv">CV</a></li>
             <li><a href="#contacts">Contacts</a></li>
           </ul>
-          <div class="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </nav>
-      </header>
-      <section id="about-me">
-        <img class="photo" src="./images/photo.jpg" alt="My photo" />
-        <div class="about-text">
-          <p>Hi! I am Oxana Danilova.</p>
-          <p>And I am Web Developer.</p>
-          <p>This is my portfolio.</p>
+        </div>
+      </nav>
+    </header>
+    <section id="about-me">
+      <img class="photo" src="./images/photo.jpg" alt="My photo" />
+      <div class="about-text">
+        <p>Hi! I am Oxana Danilova.</p>
+        <p>And I am Web Developer.</p>
+        <p>This is my portfolio.</p>
+      </div>
+    </section>
+  </div>
+  <main>
+    <section id="skills">
+      <h3>Skills</h3>
+      <ul>
+        <li>
+          <figure></figure>
+          <figcaption>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </figcaption>
+        </li>
+        <li>
+          <figure></figure>
+          <figcaption>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </figcaption>
+        </li>
+        <li>
+          <figure></figure>
+          <figcaption>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </figcaption>
+        </li>
+        <li>
+          <figure></figure>
+          <figcaption>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </figcaption>
+        </li>
+      </ul>
+    </section>
+    <section id="projects">
+      <h3>Projects</h3>
+      <ul>
+        <li>
+          <figure></figure>
+          <figcaption>
+            <a href="https://rss-english-for-kids-base.netlify.app/" target="_blank">
+              English for kids</a>
+          </figcaption>
+        </li>
+        <li>
+          <figure></figure>
+          <figcaption>
+            <a href="https://rss-match-match-game.netlify.app/" target="_blank">Match-match game</a>
+          </figcaption>
+        </li>
+        <li>
+          <figure></figure>
+          <figcaption><a href="https://oxanadanilova.github.io/webdev/" target="_blank">HTML & CSS Layout "WebDev"</a></figcaption>
+        </li>
+        <li>
+          <figure></figure>
+          <figcaption>
+            <a href="https://oxanadanilova.github.io/theyalow/" target="_blank">HTML & CSS Layout "Theyalow"</a>
+          </figcaption>
+        </li>
+      </ul>
+    </section>
+    <section id="cv">
+      <h3>CV</h3>
+      <h4>WORK EXPERIENCE <i class="fa-solid fa-briefcase"></i></h4>
+      <section class="work">
+        <div>
+          <h5>Senior Software Testing Engineer</h5>
+          <h6>EPAM Systems - 2017 - 2018</h6>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
+            soluta vitae! Eius fugiat, voluptate laboriosam repellendus
+            perspiciatis laudantium ipsa dolorem.
+          </p>
+        </div>
+        <div>
+          <h5>Software Testing Engineer</h5>
+          <h6>EPAM Systems - 2011 - 2017</h6>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
+            soluta vitae! Eius fugiat, voluptate laboriosam repellendus
+            perspiciatis laudantium ipsa dolorem.
+          </p>
+        </div>
+        <div>
+          <h5>Engineer</h5>
+          <h6>Halyk Bank - 2009 - 2011</h6>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
+            soluta vitae! Eius fugiat, voluptate laboriosam repellendus
+            perspiciatis laudantium ipsa dolorem.
+          </p>
         </div>
       </section>
-    </div>
-    <main>
-      <section id="skills">
-        <h3>Skills</h3>
-        <ul>
-          <li>
-            <figure></figure>
-            <figcaption>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-            </figcaption>
-          </li>
-          <li>
-            <figure></figure>
-            <figcaption>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-            </figcaption>
-          </li>
-          <li>
-            <figure></figure>
-            <figcaption>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-            </figcaption>
-          </li>
-          <li>
-            <figure></figure>
-            <figcaption>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-            </figcaption>
-          </li>
-        </ul>
+      <h4>EDUCATION <i class="fa-solid fa-graduation-cap"></i></h4>
+      <section class="education">
+        <div>
+          <h5>Web Development</h5>
+          <h6>DCI Digital Career Institute - 2021 - 2022</h6>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
+            soluta vitae! Eius fugiat, voluptate laboriosam repellendus
+            perspiciatis laudantium ipsa dolorem.
+          </p>
+        </div>
+        <div>
+          <h5>Bachelors degree</h5>
+          <h6>Karaganda State Technical University - 2005 - 2009</h6>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
+            perspiciatis laudantium ipsa dolorem.
+          </p>
+        </div>
       </section>
-      <section id="projects">
-        <h3>Projects</h3>
-        <ul>
-          <li>
-            <figure></figure>
-            <figcaption>Project1</figcaption>
-          </li>
-          <li>
-            <figure></figure>
-            <figcaption>Project2</figcaption>
-          </li>
-          <li>
-            <figure></figure>
-            <figcaption>Project3</figcaption>
-          </li>
-          <li>
-            <figure></figure>
-            <figcaption>Project4</figcaption>
-          </li>
-        </ul>
-      </section>
-      <section id="cv">
-        <h3>CV</h3>
-        <h4>WORK EXPERIENCE  <i class="fa-solid fa-briefcase"></i></h4>
-        <section class="work">
-          <div>
-            <h5>Senior Software Testing Engineer</h5>
-            <h6>EPAM Systems - 2017 - 2018</h6>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
-              soluta vitae! Eius fugiat, voluptate laboriosam repellendus
-              perspiciatis laudantium ipsa dolorem.
-            </p>
-          </div>
-          <div>
-            <h5>Software Testing Engineer</h5>
-            <h6>EPAM Systems - 2011 - 2017</h6>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
-              soluta vitae! Eius fugiat, voluptate laboriosam repellendus
-              perspiciatis laudantium ipsa dolorem.
-            </p>
-          </div>
-          <div>
-            <h5>Engineer</h5>
-            <h6>Halyk Bank - 2009 - 2011</h6>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
-              soluta vitae! Eius fugiat, voluptate laboriosam repellendus
-              perspiciatis laudantium ipsa dolorem.
-            </p>
-          </div>
-        </section>
-        <h4>EDUCATION  <i class="fa-solid fa-graduation-cap"></i></h4>
-        <section class="education">
-          <div>
-            <h5>Web Development</h5>
-            <h6>DCI Digital Career Institute - 2021 - 2022</h6>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
-              soluta vitae! Eius fugiat, voluptate laboriosam repellendus
-              perspiciatis laudantium ipsa dolorem.
-            </p>
-          </div>
-          <div>
-            <h5>Bachelors degree</h5>
-            <h6>Karaganda State Technical University - 2005 - 2009</h6>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
-              perspiciatis laudantium ipsa dolorem.
-            </p>
-          </div>    
-        </section>
-        
-      </section>
-      <section id="contacts">
-        <h3>Contacts</h3>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/oxana-danilova-b082a0156" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-          <li><a href="https://github.com/OxanaDanilova" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-        </ul>
-      </section>
-    </main>
-    <footer>
-      Portfolio - Oxana Danilova - 2022
-    </footer>
-  </body>
+    </section>
+    <section id="contacts">
+      <h3>Contacts</h3>
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/oxana-danilova-b082a0156" target="_blank"><i
+              class="fa-brands fa-linkedin"></i></a>
+        </li>
+        <li>
+          <a href="https://github.com/OxanaDanilova" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>Portfolio - Oxana Danilova - 2022</footer>
+</body>
+
 </html>

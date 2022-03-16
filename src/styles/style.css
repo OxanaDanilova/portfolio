@@ -20,9 +20,12 @@ body {
   background-color: royalblue;
   z-index: 10;
   box-shadow: 5px 5px 5px 5px #c4c6ca;
-  /*   @media (max-width: $mobile) {
-      display: none;
-    } */
+}
+@media (max-width: 600px) {
+  .header-wrapper nav {
+    height: 5rem;
+    color: royalblue;
+  }
 }
 .header-wrapper ul {
   padding: 2rem;
@@ -34,12 +37,28 @@ body {
   width: 50%;
   margin: 0 auto;
 }
+@media (max-width: 600px) {
+  .header-wrapper ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .header-wrapper ul li {
   font-size: 2rem;
 }
 @media (max-width: 960px) {
   .header-wrapper ul li {
     font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .header-wrapper ul li {
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 }
 .header-wrapper ul li:hover {
@@ -49,6 +68,11 @@ body {
   text-decoration: none;
   color: white;
 }
+@media (max-width: 600px) {
+  .header-wrapper ul a {
+    color: royalblue;
+  }
+}
 .header-wrapper ul a:hover {
   text-decoration: underline;
   text-underline-offset: 5px;
@@ -56,8 +80,8 @@ body {
 
 .hamburger-menu {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 1.3rem;
+  left: 1.3rem;
   cursor: pointer;
   display: none;
 }
@@ -66,12 +90,74 @@ body {
     display: block;
   }
 }
-.hamburger-menu span {
-  width: 5rem;
-  height: 3px;
-  background-color: white;
+
+#menu-wrapper input {
   display: block;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 1.3rem;
+  left: 1.3rem;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 20;
+  /* and place it over the hamburger */
+}
+
+#menu-wrapper span {
+  display: block;
+  width: 4rem;
+  height: 4px;
+  background-color: white;
   margin-bottom: 1rem;
+  position: relative;
+  border-radius: 4px;
+  z-index: 10;
+  transform-origin: 0px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menu-wrapper span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menu-wrapper span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menu-wrapper input:checked ~ .hamburger-menu > span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: royalblue;
+}
+
+#menu-wrapper input:checked ~ .hamburger-menu > span:nth-child(2) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menu-wrapper input:checked ~ .hamburger-menu > span:nth-child(3) {
+  transform: rotate(-45deg) translate(-5px, 0);
+}
+
+@media (max-width: 600px) {
+  #menu-wrapper ul {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 75px;
+    background: #ededed;
+    list-style-type: none;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+}
+
+#menu-wrapper input:checked ~ ul {
+  transform: none;
 }
 
 #about-me {
@@ -237,7 +323,6 @@ body {
 #projects {
   padding: 10rem 0;
   background: royalblue;
-  /* linear-gradient(to bottom, $color, $bg-color); */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -283,27 +368,27 @@ body {
   background-color: white;
 }
 #projects ul li:nth-child(1) > figure {
-  background: url(../images/html5.jpg);
+  background: url(../images/engl-app.png);
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 #projects ul li:nth-child(2) > figure {
-  background: url(../images/css.png);
+  background: url(../images/game.png);
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 #projects ul li:nth-child(3) > figure {
-  background: url(../images/sass.jpg);
+  background: url(../images/webdev.png);
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 #projects ul li:nth-child(4) > figure {
-  background: url(../images/js.png);
+  background: url(../images/theyallow.png);
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 #projects ul li figcaption {
