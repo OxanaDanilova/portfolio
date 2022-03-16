@@ -180,7 +180,7 @@ body {
 
 
 #about-me {
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   padding-top: 10rem;
   @include my-flex(row, space-around);
@@ -438,6 +438,9 @@ body {
     i {
       font-size: 4rem;
       color: $color;
+    }
+    @media (max-width: $mobile) {
+      width: 100%;
     }
   }
 }

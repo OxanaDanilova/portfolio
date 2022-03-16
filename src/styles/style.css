@@ -161,7 +161,7 @@ body {
 }
 
 #about-me {
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   padding-top: 10rem;
   display: flex;
@@ -475,6 +475,11 @@ body {
 #contacts ul i {
   font-size: 4rem;
   color: white;
+}
+@media (max-width: 600px) {
+  #contacts ul {
+    width: 100%;
+  }
 }
 
 footer {
