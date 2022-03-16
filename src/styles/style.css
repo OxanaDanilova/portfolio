@@ -486,4 +486,18 @@ footer {
   text-align: center;
 }
 
+.move-up {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 4rem;
+  z-index: 15;
+  color: #1748da;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+}
+
 /*# sourceMappingURL=style.css.map */

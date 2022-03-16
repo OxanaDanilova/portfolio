@@ -450,3 +450,18 @@ footer {
   line-height: 6rem;
   text-align: center;
 }
+
+.move-up {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 4rem;
+  z-index: 15;
+  color: rgb(23, 72, 218);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: $color;
+
+}
