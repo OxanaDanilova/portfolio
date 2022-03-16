@@ -1,0 +1,452 @@
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap&family=Source+Serif+Pro&display=swap");
+
+$bg-color: royalblue;
+$color: white;
+$tablet: 960px;
+$mobile: 600px;
+
+@mixin image-center {
+  object-position: center;
+  object-fit: cover;
+}
+
+@mixin bgimage-center($size: cover) {
+  background-position: center;
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+
+@mixin my-flex($direction, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Sansita Swashed", cursive;
+  background: linear-gradient(to bottom, $bg-color, $color);
+}
+
+.header-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+  nav {
+    position: fixed;
+    width: 100%;
+    opacity: 0;
+    animation: header 2s 4s forwards;
+    background-color: $bg-color;
+    z-index: 10;
+    box-shadow: 5px 5px 5px 5px rgb(196, 198, 202);
+    @media (max-width: $mobile) {
+      height: 5rem;
+      color: $bg-color;
+    }
+  }
+  ul {
+    padding: 2rem;
+    list-style-type: none;
+    @include my-flex(row, space-around);
+    width: 50%;
+    margin: 0 auto; 
+    @media (max-width: $mobile) {
+      @include my-flex(column,center );
+      padding-left: 0;
+      padding-right: 0;
+    }
+    li {
+      font-size: 2rem;
+      @media (max-width: $tablet) {
+        font-size: 1rem;
+      }     
+      @media (max-width: $mobile) {
+        font-size: 2rem; 
+        margin-bottom: 1rem;       
+      } 
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    a {
+      text-decoration: none;
+      color: $color;
+      @media (max-width: $mobile) {        
+        color: $bg-color;
+      }
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+    }
+  }
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 1.3rem;
+  left: 1.3rem;
+  cursor: pointer;
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
+  }
+}
+
+  #menu-wrapper input {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 1.3rem;
+  left: 1.3rem;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 20; /* and place it over the hamburger */
+}
+
+  #menu-wrapper span {
+    display: block;
+    width: 4rem;
+    height: 4px;
+    background-color: $color;
+    margin-bottom: 1rem;
+    position: relative;
+    border-radius: 4px;
+    z-index: 10;
+
+    transform-origin: 0px 0px;
+  
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+  }
+
+
+#menu-wrapper span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menu-wrapper span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menu-wrapper input:checked ~ .hamburger-menu>span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: $bg-color;
+}
+
+#menu-wrapper input:checked ~ .hamburger-menu>span:nth-child(2)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menu-wrapper input:checked ~ .hamburger-menu>span:nth-child(3)
+{
+  transform: rotate(-45deg) translate(-5px, 0);
+}
+
+
+#menu-wrapper ul {
+  @media (max-width: $mobile) {
+    position: absolute;
+    width: 100%;    
+    top: 0;
+    left: 0;
+    padding-top: 75px;  
+    background: #ededed;
+    list-style-type: none;  
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);  
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+
+}
+
+#menu-wrapper input:checked ~ ul
+{
+  transform: none;
+}
+
+
+#about-me {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 10rem;
+  @include my-flex(row, space-around);
+  @media (max-width: $tablet) {
+    flex-direction: column-reverse;
+    row-gap: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@keyframes appearance {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes flip {
+  0% {
+    -webkit-transform: rotate3d(-1, 1, 0, 0deg);
+    transform: rotate3d(-1, 1, 0, 0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(-1, 1, 0, 180deg);
+    transform: rotate3d(-1, 1, 0, 180deg);
+  }
+}
+
+@keyframes header {
+  from {
+    top: 100%;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.photo {
+  width: 300px;
+  height: 400px;
+  @include image-center;
+  opacity: 0;
+  animation: appearance 2s 2s forwards;
+  border-radius: 7px;
+}
+
+.about-text {
+  height: 300px;
+  @include my-flex(column, space-around);
+  p {
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+    color: $bg-color;
+    background-color: $color;
+    margin: 0 auto;
+    border-radius: 1rem;
+    opacity: 0;
+  }
+  p:nth-child(1) {
+    animation: appearance 500ms forwards;
+  }
+
+  p:nth-child(2) {
+    animation: appearance 500ms 1s forwards;
+  }
+  p:nth-child(3) {
+    animation: appearance 500ms 1.5s forwards;
+  }
+}
+
+#skills {
+  padding: 10rem 0;
+  background-color: $color;
+  @include my-flex(column, space-around);
+  color: $bg-color;
+  @media (max-width: $tablet) {
+    padding: 5rem 0;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+  ul {
+    width: 90%;
+    list-style-type: none;
+    padding: 1rem;
+    @include my-flex(row, space-around);
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+    li {
+      width: 300px;
+      height: 400px;
+      border: 2px solid $bg-color;
+      border-radius: 7px;
+      box-shadow: 5px 5px 5px 5px rgb(196, 198, 202);
+      figure {
+        width: 80%;
+        height: 80%;
+        margin: 0 auto;
+      }
+      &:nth-child(1) > figure {
+        background: url(../images/html5.jpg);
+        @include bgimage-center(contain);
+      }
+      &:nth-child(2) > figure {
+        background: url(../images/css.jpg);
+        @include bgimage-center(contain);
+        background-size: 150%;
+        background-position-y: -65px;
+      }
+      &:nth-child(3) > figure {
+        background: url(../images/sass.jpg);
+        @include bgimage-center(contain);
+      }
+      &:nth-child(4) > figure {
+        background: url(../images/js.png);
+        @include bgimage-center(contain);
+      }
+      figcaption {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+#projects {
+  padding: 10rem 0;
+  background: $bg-color;
+  @include my-flex(column, space-around);
+  color: $color;
+  @media (max-width: $tablet) {
+    padding: 5rem 0;
+  }
+  h3 {
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 1px $bg-color;
+  }
+  ul {
+    width: 90%;
+    list-style-type: none;
+    padding: 1rem;
+    @include my-flex(row, space-around);
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+    li {
+      width: 300px;
+      height: 400px;
+      border: 2px solid $color;
+      border-radius: 7px;
+      box-shadow: 5px 5px 5px 5px rgb(196, 198, 202);
+      background-color: $color;
+      figure {
+        width: 80%;
+        height: 80%;
+        margin: 0 auto;
+        background-color: $color;
+      }
+      &:nth-child(1) > figure {
+        background: url(../images/engl-app.png);
+        @include bgimage-center(cover);
+      }
+      &:nth-child(2) > figure {
+        background: url(../images/game.png);
+        @include bgimage-center(cover);
+      }
+      &:nth-child(3) > figure {
+        background: url(../images/webdev.png);
+        @include bgimage-center(cover);
+      }
+      &:nth-child(4) > figure {
+        background: url(../images/theyallow.png);
+        @include bgimage-center(cover);
+      }
+      figcaption {
+        text-align: center;
+        font-size: 1.5rem;
+        color: $bg-color;
+      }
+    }
+  }
+}
+
+#cv {
+  padding: 10rem 0;
+  background: $color;
+  color: $bg-color;
+  h3 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  h4 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  h5 {
+    font-size: 1.2rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+  div {
+    font-family: "Source Serif Pro", serif;
+    width: 50%;
+    border: 1px solid $bg-color;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+}
+
+.work,
+.education {
+  @include my-flex(column, space-around);
+  width: 60%;
+  margin: 0 auto;
+  align-items: flex-start;
+  row-gap: 1rem;
+  @media (max-width: $mobile) {
+    align-items: center;
+    width: 100%;
+  }
+  div:nth-child(2n) {
+    align-self: flex-end;
+    @media (max-width: $mobile) {
+      align-self: center;
+    }
+  }
+}
+
+#contacts {
+  padding: 5rem 0;
+  background: $bg-color;
+  color: $color;
+  h3 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  ul {
+    list-style-type: none;
+    padding: 5px;
+    width: 30vw;
+    margin: 0 auto;
+    @include my-flex(row, space-around);
+    i {
+      font-size: 4rem;
+      color: $color;
+    }
+  }
+}
+
+footer {
+  background-color: $color;
+  color: $bg-color;
+  height: 6rem;
+  padding: 1rem;
+  line-height: 6rem;
+  text-align: center;
+}
