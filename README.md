@@ -10,4 +10,4 @@ HTML, CSS, Flexbox Layout, CSS-Animation
 
 ## Demo:
 
-oxanadanilova.github.io/portfolio/
+https://oxanadanilova.github.io/portfolio/
